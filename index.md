@@ -23,7 +23,7 @@ description: Bendit Chan is a pianist, composer, and musical director.
 
   <div class="hero-introduction">
     <p>Working across classical performance, composition, and theatre.</p>
-    <a class="text-link" href="{{ '/about/' | relative_url }}">About the artist <span aria-hidden="true">↗</span></a>
+    <a class="text-link" href="{{ '/about/' | relative_url }}">About the artist <span aria-hidden="true">&#x2197;&#xFE0E;</span></a>
   </div>
 </section>
 
@@ -43,5 +43,5 @@ description: Bendit Chan is a pianist, composer, and musical director.
 <section class="home-agenda site-frame">
   <p class="section-label">Agenda</p>
   <h2>Upcoming performances</h2>
-  <a class="text-link" href="{{ '/agenda/' | relative_url }}">View agenda <span aria-hidden="true">↗</span></a>
+  <a class="text-link" href="{{ '/agenda/' | relative_url }}">View agenda <span aria-hidden="true">&#x2197;&#xFE0E;</span></a>
 </section>

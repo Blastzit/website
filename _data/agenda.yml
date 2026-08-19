@@ -1,10 +1,24 @@
 # Add, remove, or reorder performances here.
-# Dates must use YYYY-MM-DD. Leave optional fields blank if they are not needed.
+# Dates must use YYYY-MM-DD. Times use quoted 24-hour HH:MM format.
+# Leave optional fields blank if they are not needed.
 
 events:
-  - date: 2026-09-15
-    title: Opening Concert
-    venue: Studio Hall
+  - date: 2026-11-06
+    time: "13:00"
+    title: Solo Recital
+    venue: St James's Picadilly
     city: London
-    programme: ""
+    programme:
+      - "Bach: Toccata in C minor, BWV 911"
+      - "Rachmaninoff: Études-Tableaux, Op. 39 (selection)"
+      - "Chopin: Polonaise-fantasie, Op. 61"
     link: ""
+  - date: 2026-12-02
+    time: "13:00"
+    title: Lunchtime Concert
+    venue: Royal Scot's Club
+    city: Edinburgh
+    programme:
+      - "Chopin: Cello Sonata, Op. 65"
+    link: ""
+    with: "Lottie Gorrie, cello"

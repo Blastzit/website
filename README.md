@@ -44,14 +44,18 @@ Each event in `_data/agenda.yml` uses this format:
 
 ```yml
 - date: 2026-09-15
+  time: "19:30"
   title: Opening Concert
   venue: Studio Hall
   city: London
-  programme: ""
+  with: "Alice Smith, violin · London Chamber Orchestra"
+  programme:
+    - Bach — Goldberg Variations
+    - Ravel — Gaspard de la nuit
   link: ""
 ```
 
-Use dates in `YYYY-MM-DD` format. `programme` and `link` are optional and may be left blank.
+Use dates in `YYYY-MM-DD` format and quote times in 24-hour `HH:MM` format. Add each work as a separate item under `programme`; use `programme: []` when it is not yet announced. Use the optional `with` field for collaborators, an ensemble, or an orchestra. `time`, `with`, and `link` may be left blank or omitted.
 
 ## Deployment
 

@@ -465,6 +465,105 @@ p {
   letter-spacing: -0.045em;
 }
 
+.about-layout {
+  display: flow-root;
+  grid-column: 1 / -1;
+}
+
+.about-copy {
+  max-width: none;
+}
+
+.about-copy > :first-child {
+  margin-top: 0;
+}
+
+.about-copy > p:not(.lead):not(.about-action) {
+  max-width: 62rem;
+}
+
+.about-action {
+  margin-top: 2.5rem;
+}
+
+.about-figure {
+  float: right;
+  width: min(40%, 38rem);
+  margin: 0 0 3rem clamp(2.5rem, 4vw, 5rem);
+}
+
+.about-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 12% center;
+}
+
+.credits-list {
+  margin: 1.5rem 0 3rem;
+  border-top: 1px solid var(--ink);
+}
+
+.credit {
+  display: grid;
+  grid-template-columns: 4rem 1.25rem minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.credit-year {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.credit-marker {
+  position: relative;
+}
+
+.credit-marker::after {
+  position: absolute;
+  top: 0.3rem;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.credit-details h3 {
+  margin: -0.15rem 0 0.35rem;
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.credit-role {
+  margin: 0;
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.credit-company {
+  margin: 0.35rem 0 0;
+  color: var(--moss);
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .page-content h2 {
   margin: 4rem 0 1.25rem;
   font-family: var(--serif);
@@ -719,6 +818,23 @@ textarea:focus {
   line-height: 1;
 }
 
+.timeline-month {
+  margin-top: 0.3rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
+.timeline-year {
+  font-size: 0.68rem;
+}
+
+.timeline-time {
+  margin-top: 0.65rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
 .timeline-marker {
   position: relative;
 }
@@ -768,6 +884,55 @@ textarea:focus {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.timeline-with {
+  margin: -0.2rem 0 0.85rem;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.95rem !important;
+  line-height: 1.4;
+}
+
+.timeline-with span {
+  margin-right: 0.35rem;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.page-content .timeline-programme {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 42rem;
+  margin: 0.85rem 0 1.1rem;
+  padding: 0;
+  border-top: 0;
+  list-style: none;
+}
+
+.timeline-programme li {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 0.85rem;
+  border: 0;
+  font-family: var(--serif);
+  font-size: clamp(0.92rem, 1vw, 1.05rem);
+  line-height: 1.35;
+}
+
+.timeline-programme li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 0.22rem;
+  height: 0.22rem;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
 }
 
 .site-footer {
@@ -897,6 +1062,35 @@ textarea:focus {
 
   .page-content > * {
     grid-column: 1;
+  }
+
+  .about-layout {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .about-copy {
+    width: 100%;
+    min-width: 0;
+    order: 1;
+    max-width: 100%;
+  }
+
+  .about-copy > p {
+    max-width: 100% !important;
+    overflow-wrap: break-word;
+  }
+
+  .about-figure {
+    float: none;
+    order: 2;
+    width: min(100%, 30rem);
+    max-width: 30rem;
+    margin: 0;
+    justify-self: start;
   }
 
   .social-links {
@@ -1043,6 +1237,26 @@ textarea:focus {
 @media (max-width: 560px) {
   .site-frame {
     width: calc(100% - 28px);
+  }
+
+  .about-layout {
+    gap: 2.25rem;
+  }
+
+  .about-figure {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .credit {
+    grid-template-columns: 3rem 0.9rem minmax(0, 1fr);
+    gap: 0.55rem;
+    padding: 1.25rem 0;
+  }
+
+  .credit-year {
+    font-size: 1.05rem;
   }
 
   .home-hero {

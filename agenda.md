@@ -10,10 +10,11 @@ eyebrow: Performances and appearances
 <div class="timeline">
   {% for event in events %}
   <article class="timeline-event">
-    <time class="timeline-date" datetime="{{ event.date | date: '%Y-%m-%d' }}">
+    <time class="timeline-date" datetime="{{ event.date | date: '%Y-%m-%d' }}{% if event.time and event.time != '' %}T{{ event.time }}{% endif %}">
       <span class="timeline-day">{{ event.date | date: "%d" }}</span>
-      <span>{{ event.date | date: "%B" }}</span>
-      <span>{{ event.date | date: "%Y" }}</span>
+      <span class="timeline-month">{{ event.date | date: "%B" }}</span>
+      <span class="timeline-year">{{ event.date | date: "%Y" }}</span>
+      {% if event.time and event.time != "" %}<span class="timeline-time">{{ event.time }}</span>{% endif %}
     </time>
     <div class="timeline-marker" aria-hidden="true"></div>
     <div class="timeline-details">
@@ -23,8 +24,15 @@ eyebrow: Performances and appearances
         {% if event.venue != "" %}{{ event.venue }}{% endif %}{% if event.venue != "" and event.city != "" %}<span aria-hidden="true"> · </span>{% endif %}{% if event.city != "" %}{{ event.city }}{% endif %}
       </p>
       {% endif %}
-      {% if event.programme != "" %}<p>{{ event.programme }}</p>{% endif %}
-      {% if event.link != "" %}<a class="text-link" href="{{ event.link }}" target="_blank" rel="noreferrer">Details <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if event.with and event.with != "" %}
+      <p class="timeline-with"><span>With</span> {{ event.with }}</p>
+      {% endif %}
+      {% if event.programme and event.programme.size > 0 %}
+      <ul class="timeline-programme">
+        {% for work in event.programme %}<li>{{ work }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if event.link != "" %}<a class="text-link" href="{{ event.link }}" target="_blank" rel="noreferrer">Details <span aria-hidden="true">&#x2197;&#xFE0E;</span></a>{% endif %}
     </div>
   </article>
   {% endfor %}
