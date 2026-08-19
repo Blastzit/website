@@ -1,0 +1,9 @@
+hero_image: "/assets/images/piano.jpg"
+hero_image_alt: "Bendit Chan performing at a grand piano"
+hero_image_caption: "Bendit Chan at the piano"
+contact_form_endpoint: "https://formsubmit.co/hello@benditchan.com"
+
+socials:
+  instagram: "https://www.instagram.com/bendit.chan/"
+  youtube: "https://www.youtube.com/@bythepiano"
+  facebook: ""

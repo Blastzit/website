@@ -1,0 +1,12 @@
+title: Bendit Chan
+email: hello@benditchan.com
+description: Pianist, composer, and musical director.
+baseurl: ""
+url: "https://benditchan.com"
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+
+data_dir: _data

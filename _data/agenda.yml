@@ -1,0 +1,10 @@
+# Add, remove, or reorder performances here.
+# Dates must use YYYY-MM-DD. Leave optional fields blank if they are not needed.
+
+events:
+  - date: 2026-09-15
+    title: Opening Concert
+    venue: Studio Hall
+    city: London
+    programme: ""
+    link: ""
